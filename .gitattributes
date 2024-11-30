@@ -1,0 +1,4 @@
+clf.pkl filter=lfs diff=lfs merge=lfs -text
+encoder.pkl filter=lfs diff=lfs merge=lfs -text
+tfidf.lpk filter=lfs diff=lfs merge=lfs -text
+tfidf.pkl filter=lfs diff=lfs merge=lfs -text
