@@ -41,11 +41,9 @@ def pred(input_resume):
     cleaned_text = cleanResume(input_resume)
     vectorized_text = tfidf.transform([cleaned_text]).toarray()
     predicted_category = svc_model.predict(vectorized_text)[0]
-    print(f"Predicted Category (Numeric): {predicted_category}") 
     probabilities = svc_model.predict_proba(vectorized_text)
     confidence_score = max(probabilities[0]) * 100  # Skor dalam persentase
     predicted_category_name = le.inverse_transform([predicted_category])[0]
-    print(f"Predicted Category Name (Alfabetik): {predicted_category_name}")
     return predicted_category_name, vectorized_text, confidence_score
 
 def score_resume(resume_text):
