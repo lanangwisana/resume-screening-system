@@ -1,12 +1,13 @@
 import streamlit as st
-import pickle
 import PyPDF2  
 import re
 import base64
+import joblib
 
-sc_model = pickle.load(open('models/stacking_model_clf.pkl', 'rb'))
-tfidf = pickle.load(open('models/tfidf_vactorizer.pkl', 'rb'))
-le = pickle.load(open('models/label_encoder.pkl', 'rb'))
+
+sc_model = joblib.load('models/joblib_saveModels/stacking_model.sav')
+tfidf = joblib.load('models/joblib_saveModels/tfidf_vactorizer.sav')
+le = joblib.load('models/joblib_saveModels/label_encode.sav')
 
 # Fungsi untuk clean resume 
 def cleanResume(txt):
